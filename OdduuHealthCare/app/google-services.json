@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "591522792395",
+    "firebase_url": "https://odduu-health-care.firebaseio.com",
+    "project_id": "odduu-health-care",
+    "storage_bucket": "odduu-health-care.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591522792395:android:8343e7d358ce72da",
+        "android_client_info": {
+          "package_name": "helthcare.app.odduu.com.odduuhealthcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591522792395-1f8m9ltj9po7iocqi2ogobv7k7ok2p0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "helthcare.app.odduu.com.odduuhealthcare",
+            "certificate_hash": "00d00399139cb4e9a534b10119c27033fdd375fa"
+          }
+        },
+        {
+          "client_id": "591522792395-8rrfc3ptha8b8hu8p07u2g6359i6lmf2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVpQfOou3QoGEk6-PeyFFjOpowKCWqG5E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591522792395-8rrfc3ptha8b8hu8p07u2g6359i6lmf2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

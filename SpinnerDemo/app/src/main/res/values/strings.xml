@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">SpinnerDemo</string>
+
+    <array name="divission">
+        <item>Barishal</item>
+        <item>Chittagong</item>
+        <item>Dhaka</item>
+        <item>Khulna</item>
+        <item>Mymensingh</item>
+        <item>Rajshahi</item>
+        <item>Rangpur</item>
+        <item>Sylhet</item>
+    </array>
+
+    <array name="district">
+        <item>Barisal</item>
+        <item>Barguna</item>
+        <item>Bhola</item>
+        <item>Jhalokathi</item>
+        <item>Patuakhali</item>
+        <item>Pirojpur</item>
+        <item>Brahmanbaria</item>
+        <item>Comilla</item>
+        <item>Chandpur</item>
+        <item>Lakshmipur</item>
+        <item>Noakhali</item>
+        <item>Feni</item>
+        <item>Khagrachhari</item>
+        <item>Rangamati</item>
+        <item>Bandarban</item>
+        <item>Chittagong</item>
+        <item>Cox's Bazar</item>
+    </array>
+
+    <array name="thana">
+        <item>Agailjhara</item>
+        <item>Babuganj</item>
+        <item>Bakerganj</item>
+        <item>Banaripara</item>
+        <item>Gaurnadi</item>
+        <item>Hizla</item>
+        <item>Barishal Sadar</item>
+        <item>Mehendigang</item>
+        <item>Muladi</item>
+        <item>Wazirpur</item>
+        <item>Amtali</item>
+        <item>Bamna</item>
+        <item>Barguna Sadar</item>
+        <item>Betagi</item>
+        <item>Patharghata</item>
+        <item>Taltali</item>
+        <item>Bhola Sadar</item>
+        <item>Burhanuddin</item>
+        <item>Char Fasson</item>
+        <item>Daulatkhan</item>
+        <item>Lalmohan</item>
+        <item>Manpura</item>
+        <item>Tazumuddin</item>
+
+    </array>
+</resources>
