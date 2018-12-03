@@ -169,7 +169,8 @@ $app->put('/updateuser/{id}', function(Request $request, Response $response, arr
         if($db->updateUser($email, $name, $school, $id)){
             $response_data = array();
             $response_data['error'] = false;
-            $response_data['message'] = 'User Update Successfully';
+            $response_data['message'] = 'User Updated Successfully';
+
             //face new data
             $user = $db->getUserByEmail($email);
             $response_data['user'] = $user;
@@ -201,7 +202,7 @@ $app->put('/updateuser/{id}', function(Request $request, Response $response, arr
 });
 
 //create PUT request for update passuord
-$app->put('/updatepassword/{id}', function(Request $request, Response $response, array $args){
+$app->put('/updatepassword', function(Request $request, Response $response){
     $id = $args['id'];
 
     if(!haveEmptyParameters(array('currentpassword', 'newpassword', 'email'), $request, $response)){
@@ -213,10 +214,59 @@ $app->put('/updatepassword/{id}', function(Request $request, Response $response,
         $email = $request_data['email'];
 
         $db = new DbOperations;
+
+        $result = $db->updatePassword($currentpassword, $newpassword, $email);
+
+        if($result == PASSWORD_CHANGED){
+            $response_data = array();
+            $response_data['error'] = false;
+            $response_data['message'] = 'Password Changed';
+            $response->write(json_encode($response_data));
+            return $response->withHeader('Content-type', 'application/json')
+                            ->withStatus(200);
+        }
+        else if($result == PASSWORD_DO_NOT_MATCH){
+            $response_data = array();
+            $response_data['error'] = true;
+            $response_data['message'] = 'You have given wrong password';
+            $response->write(json_encode($response_data));
+            return $response->withHeader('Content-type', 'application/json')
+                            ->withStatus(200);
+        }
+        else if($result == PASSWORD_NOT_CHANGED){
+            $response_data = array();
+            $response_data['error'] = true;
+            $response_data['message'] = 'Some error occured';
+            $response->write(json_encode($response_data));
+            return $response->withHeader('Content-type', 'application/json')
+                            ->withStatus(200);
+        }
     }
     return $response
         ->withHeader('Content-type', 'application/json')
         ->withStatus(422);
+});
+
+//delete request for delete user
+$app->delete('/deleteuser/{id}', function(Request $request, Response $response, array $args){
+    $id = $args['id'];
+
+    $db = new DbOperations;
+
+    if($db->deleteUser($id)){
+        $response_data['error'] = false;
+        $response_data['message'] = 'User has been deleted';
+    }
+    else{
+        $response_data['error'] = true;
+        $response_data['message'] = 'User not delete, somthing wrong';
+    }
+
+    $response->write(json_encode($response_data));
+
+    return $response
+        ->withHeader('Content-type', 'application/json')
+        ->withStatus(200);
 });
 
 //validation for each call

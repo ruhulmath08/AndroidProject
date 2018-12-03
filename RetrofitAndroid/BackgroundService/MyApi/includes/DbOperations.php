@@ -55,15 +55,27 @@ class DbOperations{
         }
     }
 
+    //delete operation
+    public function deleteUser($id){
+        $stmt = $this->con->prepare("DELETE FROM users where id = ?");
+        $stmt->bind_param("i", $id);
+        if($stmt->execute()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     //update password
-    public function updatePassword($currentPassword, $newPasword, $email){
+    public function updatePassword($currentpassword, $newpassword, $email){
         $hashed_password = $this->getUserPasswordByEmail($email);
 
-        if(password_verify($currentPassword, $hashed_password)){
+        if(password_verify($currentpassword, $hashed_password)){
 
-            $hash_password = password_hash($newPasword, PASSWORD_DEFAULT);
-            $stmt->this->con->prepare("UPDATE users SET password = ? WHERE email = ?");
-            $stmt->bind_param($hash_password, $email);
+            $hash_password = password_hash($newpassword, PASSWORD_DEFAULT);
+            $stmt = $this->con->prepare("UPDATE users SET password = ? WHERE email = ?");
+            $stmt->bind_param("ss", $hash_password, $email);
 
             if($stmt->execute()){
                 return PASSWORD_CHANGED;

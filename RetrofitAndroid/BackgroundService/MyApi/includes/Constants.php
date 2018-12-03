@@ -13,9 +13,8 @@
     define('USER_NOT_FOUND', 202);
     define('PASSWORD_DO_NOT_MATCH', 203);
 
-    definf('PASSWORD_CHANGED', 301);
-    definf('PASSWORD_DO_NOT_MATCH', 302);
-    definf('PASSWORD_NOT_CHANGED', 303);
+    define('PASSWORD_CHANGED', 301);
+    define('PASSWORD_DO_NOT_MATCH', 302);
+    define('PASSWORD_NOT_CHANGED', 303);
 
-    //#10 Retrofit Android Tutorial - Update Operation
-    //time-17.00
+   
